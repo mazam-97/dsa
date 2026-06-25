@@ -1,17 +1,17 @@
-function combination_sum  (candidates: number[], target: number) {
+function combination_sum(candidates: number[], target: number) {
 
-  let outputs:number[][] = [];
+  let outputs: number[][] = [];
 
-  backtrack(0,[],0);
+  backtrack(0, [], 0);
   return outputs;
-  function backtrack(index: number, currentSet: number[],sum:number){
-  
-    if(sum === target){
+  function backtrack(index: number, currentSet: number[], sum: number) {
+
+    if (sum === target) {
       outputs.push([...currentSet]);
       return;
 
     }
-    if(index >= candidates.length || sum > target ){
+    if (index >= candidates.length || sum > target) {
       return;
     }
 
@@ -21,7 +21,7 @@ function combination_sum  (candidates: number[], target: number) {
 
     currentSet.pop();
 
-    backtrack(index+1, currentSet, sum);
+    backtrack(index + 1, currentSet, sum);
 
     return;
 
@@ -32,6 +32,6 @@ function combination_sum  (candidates: number[], target: number) {
 
 }
 
-console.log(combination_sum([2,3,4,5],8));
+console.log(combination_sum([2, 3, 4, 5], 8));
 
 
